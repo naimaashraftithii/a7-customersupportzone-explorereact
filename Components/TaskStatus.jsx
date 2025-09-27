@@ -3,10 +3,10 @@ import React from "react";
 export default function TaskStatus({ tasks, onComplete }) {
   return (
     <section className="bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4">Your Tasks</h2>
+      <h2 className="text-lg font-semibold text-gray-800 mb-4">Task Status</h2>
       
       {tasks.length === 0 ? (
-        <p className="text-gray-500 text-sm">✨ No active tasks right now. Pick one from the list!</p>
+        <p className="text-gray-500 text-sm">✨ Select a ticket to add to Task Status</p>
       ) : (
         <ul className="space-y-3">
           {tasks.map((task) => (

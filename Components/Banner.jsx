@@ -5,7 +5,7 @@ import vector2 from "../src/assets/vector1.png";
 export default function Banner({ stats }) {
   return (
     <section className="bg-gray-50 py-8">
-      {/* SAME CONTAINER as Navbar */}
+      
       <div className="w-11/12 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* In-Progress */}
@@ -15,13 +15,13 @@ export default function Banner({ stats }) {
               src={vector1}
               alt=""
               className="pointer-events-none select-none absolute -left-20 -top-16 h-[170%] w-auto
-                         object-cover opacity-25 -rotate-12"
+                         object-cover opacity-25 "
             />
             <img
               src={vector1}
               alt=""
-              className="pointer-events-none select-none absolute -right-20 -top-16 h-[170%] w-auto
-                         object-cover opacity-25 rotate-12"
+              className="pointer-events-none select-none absolute right-0 -top-16 h-[170%] w-auto
+                         object-cover opacity-25 -rotate-[180]"
             />
             <div className="relative z-10 h-full flex flex-col items-center justify-center text-center">
               <h3 className="text-base sm:text-lg font-medium">In-Progress</h3>

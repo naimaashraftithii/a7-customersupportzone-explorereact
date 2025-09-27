@@ -43,23 +43,17 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
       <Navbar />
 
-      {/* Banner inside 10/12 width */}
       <Container>
         <Banner stats={{ inProgress: tasks.length, resolved: resolved.length }} />
       </Container>
 
-      {/* Main content wrapped inside Container */}
       <Container>
         <main className="py-6 grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {/* Left: Tickets */}
           <div className="md:col-span-2">
             <TicketList tickets={tickets} onPick={handlePick} />
           </div>
-
-          {/* Right: Task Status & Resolved */}
           <div className="space-y-6">
             <TaskStatus tasks={tasks} onComplete={handleComplete} />
             <ResolvedList resolved={resolved} />
@@ -67,10 +61,8 @@ export default function App() {
         </main>
       </Container>
 
-      {/* Footer */}
-      <Container>
-        <Footer />
-      </Container>
+      
+      <Footer />
     </div>
   );
 }

@@ -3,16 +3,16 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa"
 
 export default function Footer() {
   return (
-    <footer className="bg-black w-full">
-        <div className="max-w-screen-xl mx-auto px-6">
-        <div className="text-gray-300 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 py-12">
+    <footer className="bg-black text-gray-300">
+      {/* Top Content */}
+      <div className="w-11/12 mx-auto max-w-7xl px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 py-12">
           {/* About */}
           <div>
             <h2 className="text-white font-bold text-lg mb-3">CS — Ticket System</h2>
             <p className="text-sm leading-6">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
             </p>
           </div>
 
@@ -48,9 +48,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Row (full width black background) */}
+      {/* Bottom Row */}
       <div className="border-t border-gray-700">
-        <div className="max-w-screen-xl mx-auto px-6 py-6 text-center">
+        <div className="w-11/12 mx-auto max-w-7xl px-4 py-6 text-center">
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} CS — Ticket System. All rights reserved.
           </p>
