@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify"; // Import toast
 
 export default function ResolvedList({ resolved }) {
   return (
@@ -18,6 +19,12 @@ export default function ResolvedList({ resolved }) {
           ))}
         </ul>
       )}
+      
+      {/* Show toast when a task is resolved */}
+      {resolved.length > 0 && toast.success("Task(s) resolved successfully!", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 3000,
+      })}
     </section>
   );
 }

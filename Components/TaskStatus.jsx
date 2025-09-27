@@ -1,10 +1,11 @@
 import React from "react";
+import { toast } from "react-toastify"; // Import toast
 
 export default function TaskStatus({ tasks, onComplete }) {
   return (
     <section className="bg-white p-6 rounded-lg shadow-md">
       <h2 className="text-lg font-semibold text-gray-800 mb-4">Task Status</h2>
-      
+
       {tasks.length === 0 ? (
         <p className="text-gray-500 text-sm">✨ Select a ticket to add to Task Status</p>
       ) : (
@@ -16,7 +17,14 @@ export default function TaskStatus({ tasks, onComplete }) {
             >
               <span className="text-sm font-medium text-gray-700">{task.title}</span>
               <button
-                onClick={() => onComplete(task.id)}
+                onClick={() => {
+                  onComplete(task.id);
+                  // Show success toast when a task is marked as complete
+                  toast.success(`Task "${task.title}" marked as completed!`, {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 3000,
+                  });
+                }}
                 className="bg-green-500 text-white text-xs px-3 py-1 rounded-md hover:bg-green-600"
               >
                 Complete

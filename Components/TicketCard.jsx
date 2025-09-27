@@ -1,79 +1,76 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Navbar from "../Components/Navbar.jsx";
+import Banner from "../Components/Banner.jsx";
+import TicketList from "../Components/TicketList.jsx";
+import TaskStatus from "../Components/TaskStatus.jsx";
+import ResolvedList from "../Components/ResolvedList.jsx";
+import Footer from "../Components/Footer.jsx";
+import ticketData from "../public/tickets.json";
+import Container from "../Components/Container";  
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function TicketCard({ ticket, onPick }) {
-  const { id, title, description, customer, priority, status, createdAt } = ticket;
+export default function App() {
+  const [tickets, setTickets] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [resolved, setResolved] = useState([]);
 
-// card status button
-  const getStatusBadge = () => {
-    switch (status) {
-      case "Open":
-        return (
-          <span className="text-xs font-small px-2 py-1 rounded-full bg-[#B9F8CF] text-[#0B5E06] flex items-center gap-1">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            Open
-          </span>
-        );
-      case "In-Progress":
-        return (
-          <span className="text-xs font-small px-2 py-1 rounded-full bg-[#F8F3B9] text-yellow-700 flex items-center gap-1">
-            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-            In-Progress
-          </span>
-        );
-   
-      default:
-        return (
-          <span className="text-xs font-medium px-2 py-1 rounded-full bg-gray-200 border border-gray-400 text-gray-700">
-            {status}
-          </span>
-        );
+  useEffect(() => {
+    setTickets(ticketData);
+  }, []);
+
+  const handlePick = (ticket) => {
+    if (tasks.some((t) => t.id === ticket.id)) {
+      toast.info("⚡ Ticket already in progress!");
+      return;
     }
+    setTasks((prev) => [...prev, { ...ticket, status: "In-Progress" }]);
+    toast.success(`🎉 Ticket "${ticket.title}" added to Task Status`);
   };
 
-  // Priority Color
-  const getPriorityColor = () => {
-    switch (priority) {
-      case "High":
-        return "text-red-600";
-      case "Medium":
-        return "text-yellow-600";
-      default:
-        return "text-green-600";
-    }
+  const handleComplete = (id) => {
+    const task = tasks.find((t) => t.id === id);
+    if (!task) return;
+
+    setTasks((prev) => prev.filter((t) => t.id !== id));
+    setResolved((prev) => [...prev, { ...task, status: "Resolved" }]);
+    setTickets((prev) => prev.filter((t) => t.id !== id));
+
+    toast.success(`✅ Task "${task.title}" marked as Resolved`);
   };
 
   return (
-    <div
-      onClick={() => onPick(ticket)}
-      className="cursor-pointer bg-white border border-gray-200 rounded-lg p-4 py-7 shadow-md hover:shadow-lg transition-all flex flex-col justify-between h-48 w-full"
-    >
-      {/* Header: Title & Status */}
-      <div className="flex justify-between items-center">
-        <h3 className="font-semibold text-gray-800 text-sm">{title}</h3>
-        {getStatusBadge()}
-      </div>
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      <Container>
+        <Banner stats={{ inProgress: tasks.length, resolved: resolved.length }} />
+      </Container>
 
-      {/* Description */}
-      <p className="text-xs text-gray-600 mt-2 line-clamp-2">{description}</p>
+      <Container>
+        <main className="py-6 grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="md:col-span-2">
+            <TicketList tickets={tickets} onPick={handlePick} />
+          </div>
+          <div className="space-y-6">
+            <TaskStatus tasks={tasks} onComplete={handleComplete} />
+            <ResolvedList resolved={resolved} />
+          </div>
+        </main>
+      </Container>
 
-      {/* Footer section  */}
-      <div className="mt-auto">
-        <div className="flex justify-between items-center text-xs text-gray-600 mt-3">
-          {/* Left side : ID & Priority */}
-          <span className="flex gap-2">
-            <span className="font-medium text-gray-500">#{id}</span>
-            <span className={`font-semibold ${getPriorityColor()}`}>
-              {priority.toUpperCase()} PRIORITY
-            </span>
-          </span>
+      <Footer />
 
-          {/* Right side Customer & Date  */}
-          <span className="flex gap-3 items-center">
-            <span>👤 {customer}</span>
-            <span>🗓 {new Date(createdAt).toLocaleDateString()}</span>
-          </span>
-        </div>
-      </div>
+      {/* Toast Container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="colored"
+      />
     </div>
   );
 }
