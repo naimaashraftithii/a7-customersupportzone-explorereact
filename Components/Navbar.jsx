@@ -49,6 +49,7 @@ export default function Navbar() {
           <a href="#blog" className="block hover:text-indigo-600">Blog</a>
           <a href="#download" className="block hover:text-indigo-600">Download</a>
           <a href="#contact" className="block hover:text-indigo-600">Contact</a>
+          {/* button */}
           <button className="w-full rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-2 text-sm font-semibold text-white shadow hover:from-indigo-600 hover:to-purple-600 transition">
             ＋ New Ticket
           </button>

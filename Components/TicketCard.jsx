@@ -3,7 +3,7 @@ import React from "react";
 export default function TicketCard({ ticket, onPick }) {
   const { id, title, description, customer, priority, status, createdAt } = ticket;
 
-  // Status Badge with styled backgrounds + borders
+// card status button
   const getStatusBadge = () => {
     switch (status) {
       case "Open":
@@ -47,7 +47,7 @@ export default function TicketCard({ ticket, onPick }) {
       onClick={() => onPick(ticket)}
       className="cursor-pointer bg-white border border-gray-200 rounded-lg p-4 py-7 shadow-md hover:shadow-lg transition-all flex flex-col justify-between h-48 w-full"
     >
-      {/* Header: Title + Status */}
+      {/* Header: Title & Status */}
       <div className="flex justify-between items-center">
         <h3 className="font-semibold text-gray-800 text-sm">{title}</h3>
         {getStatusBadge()}
@@ -56,10 +56,10 @@ export default function TicketCard({ ticket, onPick }) {
       {/* Description */}
       <p className="text-xs text-gray-600 mt-2 line-clamp-2">{description}</p>
 
-      {/* Footer: ID + Priority (Left) | Customer + Date (Right) */}
+      {/* Footer section  */}
       <div className="mt-auto">
         <div className="flex justify-between items-center text-xs text-gray-600 mt-3">
-          {/* Left side */}
+          {/* Left side : ID & Priority */}
           <span className="flex gap-2">
             <span className="font-medium text-gray-500">#{id}</span>
             <span className={`font-semibold ${getPriorityColor()}`}>
@@ -67,7 +67,7 @@ export default function TicketCard({ ticket, onPick }) {
             </span>
           </span>
 
-          {/* Right side */}
+          {/* Right side Customer & Date  */}
           <span className="flex gap-3 items-center">
             <span>👤 {customer}</span>
             <span>🗓 {new Date(createdAt).toLocaleDateString()}</span>

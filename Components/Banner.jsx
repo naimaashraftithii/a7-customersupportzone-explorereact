@@ -8,7 +8,7 @@ export default function Banner({ stats }) {
       
       <div className="w-11/12 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* In-Progress */}
+          {/* In-Progress Card*/}
           <div className="relative h-40 sm:h-44 md:h-48 rounded-xl text-white shadow-lg overflow-hidden
                           bg-gradient-to-r from-[#8A42F6] to-[#4F67FF]">
             <img
@@ -31,7 +31,7 @@ export default function Banner({ stats }) {
             </div>
           </div>
 
-          {/* Resolved */}
+          {/* Resolved card*/}
           <div className="relative h-40 sm:h-44 md:h-48 rounded-xl text-white shadow-lg overflow-hidden
                           bg-gradient-to-r from-[#10D780] to-[#098B6F]">
             <img

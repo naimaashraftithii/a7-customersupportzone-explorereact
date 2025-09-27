@@ -4,10 +4,10 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa"
 export default function Footer() {
   return (
     <footer className="bg-black text-gray-300">
-      {/* Top Content */}
+      {/* Top-Content Section*/}
       <div className="w-11/12 mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 py-12">
-          {/* About */}
+          {/* About Section */}
           <div>
             <h2 className="text-white font-bold text-lg mb-3">CS — Ticket System</h2>
             <p className="text-sm leading-6">
@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Company */}
+          {/* Company-section */}
           <div>
             <h3 className="text-white font-semibold mb-3">Company</h3>
             <ul className="space-y-2 text-sm">
@@ -26,7 +26,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Services-section */}
           <div>
             <h3 className="text-white font-semibold mb-3">Services</h3>
             <ul className="space-y-2 text-sm">
@@ -36,7 +36,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Information */}
+          {/* Information-section */}
           <div>
             <h3 className="text-white font-semibold mb-3">Information</h3>
             <ul className="space-y-2 text-sm">
