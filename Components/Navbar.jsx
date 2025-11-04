@@ -25,12 +25,12 @@ export default function Navbar() {
             <a href="#contact" className="hover:text-indigo-600">Contact</a>
           </nav>
 
-          {/* New Ticket  Button */}
+          {/*Ticket  Button */}
           <button className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-2 text-sm font-semibold text-white shadow hover:from-indigo-600 hover:to-purple-600 transition">
             <span className="text-base">＋</span> New Ticket
           </button>
 
-          {/* For Nobile button*/}
+          {/* Mobile button*/}
           <button
             className="md:hidden p-2 text-gray-600 rounded-lg hover:bg-gray-100"
             onClick={() => setIsOpen(!isOpen)}
@@ -40,7 +40,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav Drop Down */}
+      {/* Mobile Drop Down */}
       {isOpen && (
         <div className="md:hidden px-6 pb-4 space-y-3 text-gray-700 text-sm">
           <a href="#home" className="block hover:text-indigo-600">Home</a>

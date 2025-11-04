@@ -1,12 +1,7 @@
 import React from "react";
 
-//  width Fixer
 const Container = ({ children }) => {
-  return (
-    <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6">
-      {children}
-    </div>
-  );
+  return <div className="container mx-auto">{children}</div>;
 };
 
 export default Container;

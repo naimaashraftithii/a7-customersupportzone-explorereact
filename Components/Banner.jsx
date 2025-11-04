@@ -5,23 +5,22 @@ import vector2 from "../src/assets/vector1.png";
 export default function Banner({ stats }) {
   return (
     <section className="bg-gray-50 py-8">
-      
-      <div className="w-11/12 mx-auto">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* In-Progress Card*/}
+          {/* In-Progress */}
           <div className="relative h-40 sm:h-44 md:h-48 rounded-xl text-white shadow-lg overflow-hidden
                           bg-gradient-to-r from-[#8A42F6] to-[#4F67FF]">
             <img
               src={vector1}
               alt=""
               className="pointer-events-none select-none absolute -left-20 -top-16 h-[170%] w-auto
-                         object-cover opacity-25 "
+                         object-cover opacity-25 -rotate-12"
             />
             <img
               src={vector1}
               alt=""
-              className="pointer-events-none select-none absolute right-0 -top-16 h-[170%] w-auto
-                         object-cover opacity-25 -rotate-[180]"
+              className="pointer-events-none select-none absolute -right-20 -top-16 h-[170%] w-auto
+                         object-cover opacity-25 rotate-12"
             />
             <div className="relative z-10 h-full flex flex-col items-center justify-center text-center">
               <h3 className="text-base sm:text-lg font-medium">In-Progress</h3>
@@ -31,7 +30,7 @@ export default function Banner({ stats }) {
             </div>
           </div>
 
-          {/* Resolved card*/}
+          {/* Resolved */}
           <div className="relative h-40 sm:h-44 md:h-48 rounded-xl text-white shadow-lg overflow-hidden
                           bg-gradient-to-r from-[#10D780] to-[#098B6F]">
             <img

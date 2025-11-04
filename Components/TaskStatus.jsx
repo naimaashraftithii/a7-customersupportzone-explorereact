@@ -1,5 +1,5 @@
 import React from "react";
-import { toast } from "react-toastify"; // Import toast
+import { toast } from "react-toastify";
 
 export default function TaskStatus({ tasks, onComplete }) {
   return (
@@ -7,7 +7,7 @@ export default function TaskStatus({ tasks, onComplete }) {
       <h2 className="text-lg font-semibold text-gray-800 mb-4">Task Status</h2>
 
       {tasks.length === 0 ? (
-        <p className="text-gray-500 text-sm">✨ Select a ticket to add to Task Status</p>
+        <p className="text-gray-500 text-sm">🎯 Select a ticket to add to Task Status</p>
       ) : (
         <ul className="space-y-3">
           {tasks.map((task) => (
@@ -17,9 +17,9 @@ export default function TaskStatus({ tasks, onComplete }) {
             >
               <span className="text-sm font-medium text-gray-700">{task.title}</span>
               <button
+                type="button" 
                 onClick={() => {
-                  onComplete(task.id);
-                  // Show success toast when a task is marked as complete
+                  onComplete(task.id); 
                   toast.success(`Task "${task.title}" marked as completed!`, {
                     position: toast.POSITION.TOP_CENTER,
                     autoClose: 3000,
