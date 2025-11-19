@@ -110,7 +110,11 @@ This project focuses on:
 
 ## 📸 Screenshots / Demo
 
-> _You can add your own screenshots or live demo link here._
+<!-- Typing SVG -->
+<p align="center">
+  <img src="" />
+</p>
+
 
 Example:
 
