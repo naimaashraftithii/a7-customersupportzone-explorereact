@@ -112,7 +112,7 @@ This project focuses on:
 
 <!-- Typing SVG -->
 <p align="center">
-  <img src="" />
+  <img src="https://github.com/naimaashraftithii/a7-customersupportzone-explorereact/blob/main/CS%20%E2%80%94%20Ticket%20System.png" />
 </p>
 
 
@@ -346,14 +346,8 @@ A few options:
 
 ## 📬 Contact
 
-* **Author:** *Your Name Here*
-* **Email:** [your.email@example.com](mailto:your.email@example.com)
-* **GitHub:** [https://github.com/your-username](https://github.com/your-username)
+* Author:Naima Ashraf Tithi
+* **Email:* naimaashraftithi@gmail.com * 
 
-Feel free to fork, modify, and experiment with the project.
-If you add a backend (like Node/Express, MongoDB, etc.), you can easily turn this into a full ticketing platform. 🎯
 
-```
 
-If you tell me your actual GitHub repo URL and where you’ll host (Vercel / Netlify), I can tweak the README with your real links and commands.
-```
